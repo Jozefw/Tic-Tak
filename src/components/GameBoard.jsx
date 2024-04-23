@@ -5,15 +5,16 @@ const InitialGame = [
     [null,null,null],
     [null,null,null],
 ]
-export default function GameBoard(){
+export default function GameBoard({playerChange,activePlayerIcon}){
     const [GameBoard,setGameBoard] = useState(InitialGame)
 
     function handleBoardCLick(RowIndex,ColIndex){
         setGameBoard((previousBoard)=>{
             const updatedBoard = [...previousBoard.map(innerArrays => [...innerArrays])];
-            updatedBoard[RowIndex][ColIndex] ='X';
+            updatedBoard[RowIndex][ColIndex] = activePlayerIcon;
             return updatedBoard;
         })
+        playerChange();
     }
     return(
         <ol id="game-board">
