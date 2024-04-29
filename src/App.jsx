@@ -5,15 +5,11 @@ import GameBoard from './components/GameBoard.jsx';
 import Log from './components/Log.jsx';
 
 function App() {
-    const [activePlayer,
-        setActivePlayer] = useState('X');
-    const [playerTurns,
-        SetPlayerTurns] = useState('')
+    const [activePlayer,setActivePlayer] = useState('X');
+    const [playerTurns,SetPlayerTurns] = useState('')
 
     function handlePlayerRotation(rowIndex, columnIndex) {
-        setActivePlayer((CurrentPlayer) => CurrentPlayer === "X"
-            ? "O"
-            : "X";
+        setActivePlayer((CurrentPlayer) => CurrentPlayer === "X" ? "O" : "X");
         SetPlayerTurns(previousTurns => {
             const updatedTurns = [
                 {
